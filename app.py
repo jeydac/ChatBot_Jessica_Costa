@@ -27,6 +27,14 @@ def obter_resposta(texto: str) -> str:
             "O que é um vegetariano que come carne? Um ex-vegetariano!",
         ]
         return random.choice(piadas)
+    if 'curiosidade' in comando:
+        curiosidades = [
+            "Sabias que o polvo tem três corações?",
+            "Sabias que  mel nunca se estraga e que deve-se usar sempre uma colher de madeira?",
+            "Sabias que o maior animal do mundo é a baleia-azul? Ela pode pesar até 200 toneladas!",
+            "Sabias que o tempo que a luz leva para chegar do Sol à Terra é de aproximadamente 8 minutos e 20 segundos?",
+        ]
+    return random.choice(curiosidades)
 
     return f'Desculpa, não entendi a questão! {texto}'
 
