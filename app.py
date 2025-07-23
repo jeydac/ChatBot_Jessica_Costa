@@ -37,7 +37,18 @@ def obter_resposta(texto: str) -> str:
             "Sabias que o maior animal do mundo é a baleia-azul? Ela pode pesar até 200 toneladas!",
             "Sabias que o tempo que a luz leva para chegar do Sol à Terra é de aproximadamente 8 minutos e 20 segundos?",
         ]
-    return random.choice(curiosidades)
+        return random.choice(curiosidades)
+    if 'previsão' in comando or 'metereologia' in comando:
+        previsoes = [
+            "A previsão do tempo para hoje é de sol com algumas nuvens.",
+            "Hoje pode chover à tarde, não se esqueça do guarda-chuva!",
+            "O dia será nublado, mas sem previsão de chuva.",
+            "Prepare-se para um dia ensolarado e quente!",
+        ]
+        return random.choice(previsoes) 
+    
+
+
 
     return f'Desculpa, não entendi a questão! {texto}'
 
