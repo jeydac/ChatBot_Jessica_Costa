@@ -1,5 +1,6 @@
 import os
 from datetime import datetime
+import random
 
 def obter_resposta(texto: str) -> str:
     comando: str = texto.lower()
@@ -16,8 +17,16 @@ def obter_resposta(texto: str) -> str:
         return 'Gostei de falar contigo! Até breve...'
     if 'horas' in comando:
         return f'São: {datetime.now():%H:%M} horas'
-    if 'data' in comando:
+    if ('data' or 'dia') and 'é hoje' in comando:
         return f'Hoje é dia: {datetime.now():%d-%m-%Y}'
+    if 'piada' in comando:
+        piadas = [
+            "Porque é que o computador foi ao médico? Porque tinha um vírus!",
+            "Para que servem os óculos verdes? Para verde perto.",
+            "Porque é que o livro de matemática se suicidou? Porque tinha muitos problemas."
+            "O que é um vegetariano que come carne? Um ex-vegetariano!",
+        ]
+        return random.choice(piadas)
 
     return f'Desculpa, não entendi a questão! {texto}'
 
