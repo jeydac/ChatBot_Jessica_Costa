@@ -19,6 +19,9 @@ def obter_resposta(texto: str) -> str:
         return f'São: {datetime.now():%H:%M} horas'
     if ('data' or 'dia') and 'é hoje' in comando:
         return f'Hoje é dia: {datetime.now():%d-%m-%Y}'
+    if 'ajuda' in comando or 'comandos' in comando:
+        return ("Podes perguntar: olá, como estás, como te chamas, tempo, horas, data, piada, curiosidade, ajuda, "
+                "ou dizer bye para sair.")
     if 'piada' in comando:
         piadas = [
             "Porque é que o computador foi ao médico? Porque tinha um vírus!",
